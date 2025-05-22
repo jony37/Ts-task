@@ -119,3 +119,92 @@
 //   // But we can't re-assign it.
 //   person.id = 12345;
 // }
+
+// const numbers: number[] = [1, 2, 3];
+// const anotherNumbers: Array<number> = [1, 2, 3];
+
+// interface Person {
+//     ism: string;
+//     age: number;
+// }
+
+// function gret (person: Person) {
+//     console.log(`my name is ${person.ism}, ${person.age}`);
+// }
+
+// gret({ism: "John", age: 18});
+
+enum StudentStatus {
+  Active = "Active",
+  Graduated = "Graduated",
+  Dropped = "Dropped",
+}
+
+interface Student {
+  id: number;
+  name: string;
+  age: number;
+  status: StudentStatus;
+  grades: number[];
+}
+
+const students: Student[] = [
+  {
+    id: 1,
+    name: "Ali",
+    age: 20,
+    status: StudentStatus.Active,
+    grades: [80, 75, 90],
+  },
+  {
+    id: 2,
+    name: "Laylo",
+    age: 17,
+    status: StudentStatus.Graduated,
+    grades: [88, 92, 95],
+  },
+  {
+    id: 3,
+    name: "Diyor",
+    age: 22,
+    status: StudentStatus.Dropped,
+    grades: [60, 55, 70],
+  },
+  {
+    id: 4,
+    name: "Malika",
+    age: 19,
+    status: StudentStatus.Active,
+    grades: [100, 95, 98],
+  },
+];
+
+for (let i = 0; i < students.length; i++) {
+  const Allstudents = students[i];
+  //   //   console.log(`talabalar royxati: ${students[i].name}`);
+
+  //   //   console.log(`id: ${students[i].id}, name: ${students[i].name}, age: ${students[i].age}, status: ${students[i].status}, grades: ${students[i].grades}`);
+
+  //   // Statusni tekshirish
+  //   if (Allstudents.status == StudentStatus.Active) {
+  //     console.log(`${Allstudents.name} status: ${Allstudents.status}`);
+  //   } else {
+  //     console.log(`${Allstudents.name} status: ${Allstudents.status}`);
+  //   }
+
+  //   // Ageni tekshirish
+  //   if (Allstudents.age > 18) {
+  //     console.log(`Yoshi 18 dan katta: ${Allstudents.name} yoshi: ${Allstudents.age}`);
+  //   } else {
+  //     console.log(`Yoshi 18 dan kichik: ${Allstudents.name} yoshi: ${Allstudents.age}`);
+  //   }
+
+  const grade = students[i].grades;
+
+  for (let j of grade) {
+    console.log(j);
+    
+  }
+
+  // console.log(`Student ismi: ${students[i].name}, yoshi: ${students[i].age}, ortacha baxosi: ${calculateAverage(students[i].grades)}`);
+}
