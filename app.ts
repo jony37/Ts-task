@@ -179,32 +179,53 @@ const students: Student[] = [
   },
 ];
 
+let kattalar: Student[] = [];
 for (let i = 0; i < students.length; i++) {
   const Allstudents = students[i];
-  //   //   console.log(`talabalar royxati: ${students[i].name}`);
 
-  //   //   console.log(`id: ${students[i].id}, name: ${students[i].name}, age: ${students[i].age}, status: ${students[i].status}, grades: ${students[i].grades}`);
+  // 1
+  console.log(
+    `${Allstudents.name} yosh: ${Allstudents.age}, holati: ${Allstudents.status}`
+  );
 
-  //   // Statusni tekshirish
-  //   if (Allstudents.status == StudentStatus.Active) {
-  //     console.log(`${Allstudents.name} status: ${Allstudents.status}`);
-  //   } else {
-  //     console.log(`${Allstudents.name} status: ${Allstudents.status}`);
-  //   }
-
-  //   // Ageni tekshirish
-  //   if (Allstudents.age > 18) {
-  //     console.log(`Yoshi 18 dan katta: ${Allstudents.name} yoshi: ${Allstudents.age}`);
-  //   } else {
-  //     console.log(`Yoshi 18 dan kichik: ${Allstudents.name} yoshi: ${Allstudents.age}`);
-  //   }
-
-  const grade = students[i].grades;
-
-  for (let j of grade) {
-    console.log(j);
-    
+  // 2
+  if (Allstudents.age > 18) {
+    console.log(`${Allstudents.name} yoshi: ${Allstudents.age}`);
   }
 
-  // console.log(`Student ismi: ${students[i].name}, yoshi: ${students[i].age}, ortacha baxosi: ${calculateAverage(students[i].grades)}`);
+  // 3
+  if (Allstudents.status === StudentStatus.Active) {
+    console.log(`${Allstudents.name} status: ${Allstudents.status}`);
+  }
+
+  // 4
+  console.log(`${Allstudents.name} ni ortacha baxosi ${ortaBaxo(Allstudents.grades)}`);
+
+  // 5
+  console.log(`${Allstudents.name} yoshi: ${Allstudents.age}, statusi: ${Allstudents.status}, ortacha baxosi: ${ortaBaxo(Allstudents.grades)}`);
+  
+}
+
+function ortaBaxo(grades: number[]) {
+  const gradeClone = grades.slice();
+
+  const max = Math.max(...gradeClone);
+  const min = Math.min(...gradeClone);
+
+  const maxSon = gradeClone.indexOf(max);
+  if (maxSon !== -1) {
+    gradeClone.splice(maxSon, 1);
+  }
+
+  const minSon = gradeClone.indexOf(min);
+  if (minSon !== -1) {
+    gradeClone.splice(minSon, 1);
+  }
+
+  let sum = 0;
+  for (let i = 0; i < gradeClone.length; i++) {
+    sum += gradeClone[i];
+  }
+
+  return Math.round(sum / gradeClone.length);
 }
