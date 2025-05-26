@@ -31,7 +31,7 @@
 //////////////////// 7 - dars  ReadOnly ////////////////////
 // let admins: readonly number[] = [1,2,3,4,5];
 // console.log(admins);
-// // admins.push(6); bu yerda biz 6 qoshaolmeymiz 
+// // admins.push(6); bu yerda biz 6 qoshaolmeymiz
 // let person: readonly [string, number] = ["String", 1];
 // // person[0] = 'Doe' Xato
 // const [fullName, age] = person;
@@ -39,4 +39,43 @@
 // console.log(age);
 // // 2 syntaxix
 // let num: ReadonlyArray<number> = [1,2,3,4];
-// console.log(num); 
+// console.log(num);
+/////////////////////// 8 - dars Enums //////////////////////////
+// Odiy enum yaratish usuli
+// enum Direction{
+//     Up,
+//     Down,
+//     Left,
+//     Right
+// }
+// enum Direction{
+//     Up = 1,
+//     Down,
+//     Left,
+//     Right
+// }
+// enum Direction {
+//   Up = "Up",
+//   Down = "Down",
+//   Left = "Left",
+//   Right = "Right",
+// }
+// function getDerection(direction: Direction) {
+//   if (Direction.Up === "Up") {
+//     return console.log(true);
+//   }
+// }
+// getDerection(Direction.Up);
+// enum StatusCode {
+//     Ok = 200,
+//     NotFound = 404,
+//     ServerError = 500
+// }
+// function chek (url: string): StatusCode {
+//     if (url === '/') {
+//         return StatusCode.Ok
+//     } else if (url === 'server/error') {
+//         return StatusCode.ServerError
+//     }
+//     return StatusCode.NotFound
+// }

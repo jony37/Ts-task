@@ -1,9 +1,14 @@
 "use strict";
-let admins = [1, 2, 3, 4, 5];
-console.log(admins);
-// admins.push(6); bu yerda biz 6 qoshaolmeymiz 
-let person = ["String", 1];
-// person[0] = 'Doe' Xato
-const [fullName, age] = person;
-console.log(fullName);
-console.log(age);
+var Direction;
+(function (Direction) {
+    Direction["Up"] = "Up";
+    Direction["Down"] = "Down";
+    Direction["Left"] = "Left";
+    Direction["Right"] = "Right";
+})(Direction || (Direction = {}));
+function getDerection(direction) {
+    if (Direction.Up === "Up") {
+        return console.log(true);
+    }
+}
+getDerection(Direction.Up);
