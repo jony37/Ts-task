@@ -134,98 +134,114 @@
 
 // gret({ism: "John", age: 18});
 
-enum StudentStatus {
-  Active = "Active",
-  Graduated = "Graduated",
-  Dropped = "Dropped",
-}
+// /////////////////////// Class work ////////////////
+// enum StudentStatus {
+//   Active = "Active",
+//   Graduated = "Graduated",
+//   Dropped = "Dropped",
+// }
 
-interface Student {
-  id: number;
-  name: string;
-  age: number;
-  status: StudentStatus;
-  grades: number[];
-}
+// interface Student {
+//   id: number;
+//   name: string;
+//   age: number;
+//   status: StudentStatus;
+//   grades: number[];
+// }
 
-const students: Student[] = [
-  {
-    id: 1,
-    name: "Ali",
-    age: 20,
-    status: StudentStatus.Active,
-    grades: [80, 75, 90],
-  },
-  {
-    id: 2,
-    name: "Laylo",
-    age: 17,
-    status: StudentStatus.Graduated,
-    grades: [88, 92, 95],
-  },
-  {
-    id: 3,
-    name: "Diyor",
-    age: 22,
-    status: StudentStatus.Dropped,
-    grades: [60, 55, 70],
-  },
-  {
-    id: 4,
-    name: "Malika",
-    age: 19,
-    status: StudentStatus.Active,
-    grades: [100, 95, 98],
-  },
-];
+// const students: Student[] = [
+//   {
+//     id: 1,
+//     name: "Ali",
+//     age: 20,
+//     status: StudentStatus.Active,
+//     grades: [80, 75, 90],
+//   },
+//   {
+//     id: 2,
+//     name: "Laylo",
+//     age: 17,
+//     status: StudentStatus.Graduated,
+//     grades: [88, 92, 95],
+//   },
+//   {
+//     id: 3,
+//     name: "Diyor",
+//     age: 22,
+//     status: StudentStatus.Dropped,
+//     grades: [60, 55, 70],
+//   },
+//   {
+//     id: 4,
+//     name: "Malika",
+//     age: 19,
+//     status: StudentStatus.Active,
+//     grades: [100, 95, 98],
+//   },
+// ];
 
-let kattalar: Student[] = [];
-for (let i = 0; i < students.length; i++) {
-  const Allstudents = students[i];
+// let kattalar: Student[] = [];
+// for (let i = 0; i < students.length; i++) {
+//   const Allstudents = students[i];
 
-  // 1
-  console.log(
-    `${Allstudents.name} yosh: ${Allstudents.age}, holati: ${Allstudents.status}`
-  );
+// //   // 1
+// //   console.log(
+// //     `${Allstudents.name} yosh: ${Allstudents.age}, holati: ${Allstudents.status}`
+// //   );
 
-  // 2
-  if (Allstudents.age > 18) {
-    console.log(`${Allstudents.name} yoshi: ${Allstudents.age}`);
-  }
+// //   // 2
+// //   if (Allstudents.age > 18) {
+// //     console.log(`${Allstudents.name} yoshi: ${Allstudents.age}`);
+// //   }
 
-  // 3
-  if (Allstudents.status === StudentStatus.Active) {
-    console.log(`${Allstudents.name} status: ${Allstudents.status}`);
-  }
+// //   // 3
+// //   if (Allstudents.status === StudentStatus.Active) {
+// //     console.log(`${Allstudents.name} status: ${Allstudents.status}`);
+// //   }
 
-  // 4
-  console.log(`${Allstudents.name} ni ortacha baxosi ${ortaBaxo(Allstudents.grades)}`);
+// //   // 4
+// //   console.log(`${Allstudents.name} ni ortacha baxosi ${ortaBaxo(Allstudents.grades)}`);
 
-  // 5
-  console.log(`${Allstudents.name} yoshi: ${Allstudents.age}, statusi: ${Allstudents.status}, ortacha baxosi: ${ortaBaxo(Allstudents.grades)}`);
-  
-}
+//   // 5
+//   console.log(`${Allstudents.name} yoshi: ${Allstudents.age}, statusi: ${Allstudents.status}, ortacha baxosi: ${ortaBaxo(Allstudents.grades)}`);
 
-function ortaBaxo(grades: number[]) {
-  const gradeClone = grades.slice();
+// }
 
-  const max = Math.max(...gradeClone);
-  const min = Math.min(...gradeClone);
+// function ortaBaxo(grades: number[]) {
+//   const gradeClone = grades.slice();
 
-  const maxSon = gradeClone.indexOf(max);
-  if (maxSon !== -1) {
-    gradeClone.splice(maxSon, 1);
-  }
+//   const max = Math.max(...gradeClone);
+//   const min = Math.min(...gradeClone);
 
-  const minSon = gradeClone.indexOf(min);
-  if (minSon !== -1) {
-    gradeClone.splice(minSon, 1);
-  }
+//   const maxSon = gradeClone.indexOf(max);
+//   if (maxSon !== -1) {
+//     gradeClone.splice(maxSon, 1);
+//   }
 
-  let sum = 0;
-  for (let i = 0; i < gradeClone.length; i++) {
-    sum += gradeClone[i];
-  }
+//   const minSon = gradeClone.indexOf(min);
+//   if (minSon !== -1) {
+//     gradeClone.splice(minSon, 1);
+//   }
 
-  return Math.round(sum / gradeClone.length);
-}
+//   let sum = 0;
+//   for (let i = 0; i < gradeClone.length; i++) {
+//     sum += gradeClone[i];
+//   }
+
+//   return Math.round(sum / gradeClone.length);
+// }
+
+// const arr: number[] = [
+//   42, 3, 60, 7, 19, 85, 25, 42, 64, 76, 1, 99, 31, 17, 27, 33, 17, 49, 57, 4, 2,
+//   5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 21, 22, 23, 24, 26, 28, 29, 30,
+//   32, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53,
+//   54, 55, 56, 58, 59, 60, 61, 62, 63, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
+//   75, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94,
+//   95, 96,
+// ];
+
+// for (let i = arr.length - 1; i >= 0; i--) {
+//   if (arr[i] === arr[i]) {
+//     arr.splice(i, 1);
+//   }
+// }
