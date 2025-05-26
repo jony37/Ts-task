@@ -79,3 +79,34 @@
 //     }
 //     return StatusCode.NotFound
 // }
+/////////////// 2 modul **********************************
+////////////// 10 dars Union type//////////////////////////
+// let id: string | number;
+// id = "1234"
+// id = 1234;
+// console.log(id);
+// function printId (id: string | number) {
+//     console.log(`The id is ${id}`);
+// }
+// printId(123)
+function getVal(value) {
+    if (typeof value === "string") {
+        return value.toUpperCase();
+    }
+    else if (typeof value === 'number') {
+        return value.toFixed(2);
+    }
+    return `Uknown type ${value}`;
+}
+console.log(getVal("hello"));
+console.log(getVal(123.456));
+function logError(error) {
+    if ('massage' in error) {
+        console.log('Massage', error.massage);
+    }
+    else {
+        console.log("Error", error.error);
+    }
+}
+logError(({ massage: "Hello" }));
+logError(({ massage: "Hello" }));

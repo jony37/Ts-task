@@ -1,14 +1,11 @@
 "use strict";
-var Direction;
-(function (Direction) {
-    Direction["Up"] = "Up";
-    Direction["Down"] = "Down";
-    Direction["Left"] = "Left";
-    Direction["Right"] = "Right";
-})(Direction || (Direction = {}));
-function getDerection(direction) {
-    if (Direction.Up === "Up") {
-        return console.log(true);
+function logError(error) {
+    if ('massage' in error) {
+        console.log('Massage', error.massage);
+    }
+    else {
+        console.log("Error", error.error);
     }
 }
-getDerection(Direction.Up);
+logError(({ massage: "Hello" }));
+logError(({ massage: "Hello" }));
