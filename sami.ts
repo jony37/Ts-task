@@ -121,26 +121,45 @@
 
 // printId(123)
 
-function getVal (value: string | number): string | number {
-    if (typeof value === "string") {
-        return value.toUpperCase();
-    } else if (typeof value === 'number') {
-        return value.toFixed(2);
-    }
+// function getVal (value: string | number): string | number {
+//     if (typeof value === "string") {
+//         return value.toUpperCase();
+//     } else if (typeof value === 'number') {
+//         return value.toFixed(2);
+//     }
 
-    return `Uknown type ${value}`
-}
+//     return `Uknown type ${value}`
+// }
 
-console.log(getVal("hello"));
-console.log(getVal(123.456));
+// console.log(getVal("hello"));
+// console.log(getVal(123.456));
 
-function logError (error: {massage: string} | {error: string}) {
-    if ('massage' in error) {
-        console.log('Massage', error.massage);
-    } else {
-        console.log("Error", error.error);
-    }
-}
+// function logError (error: {massage: string} | {error: string}) {
+//     if ('massage' in error) {
+//         console.log('Massage', error.massage);
+//     } else {
+//         console.log("Error", error.error);
+//     }
+// }
 
-logError(({massage: "Hello"}))
-logError(({massage: "Hello"}))
+// logError(({massage: "Hello"}))
+// logError(({massage: "Hello"}))
+
+
+// /////////////// 11 Literal type chi dars ///////////////
+// enum Status {
+//     SUCCESS,
+//     ERROR
+// }
+
+// function getStatus(status: "success" | "error"): "success" | "error" {
+//     if (status === "success") {
+//         return 'success'
+//     }  
+
+//     return 'error'
+// }
+
+
+// const statusMassage = getStatus('error')
+// console.log(statusMassage);
