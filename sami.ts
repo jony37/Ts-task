@@ -88,7 +88,6 @@
 
 // getDerection(Direction.Up);
 
-
 // enum StatusCode {
 //     Ok = 200,
 //     NotFound = 404,
@@ -105,7 +104,6 @@
 //     return StatusCode.NotFound
 // }
 
-
 /////////////// 2 modul **********************************
 
 ////////////// 10 dars Union type//////////////////////////
@@ -113,7 +111,6 @@
 // id = "1234"
 // id = 1234;
 // console.log(id);
-
 
 // function printId (id: string | number) {
 //     console.log(`The id is ${id}`);
@@ -145,7 +142,6 @@
 // logError(({massage: "Hello"}))
 // logError(({massage: "Hello"}))
 
-
 // /////////////// 11 Literal type chi dars ///////////////
 // enum Status {
 //     SUCCESS,
@@ -155,11 +151,46 @@
 // function getStatus(status: "success" | "error"): "success" | "error" {
 //     if (status === "success") {
 //         return 'success'
-//     }  
+//     }
 
 //     return 'error'
 // }
 
-
 // const statusMassage = getStatus('error')
 // console.log(statusMassage);
+
+// /////////// 12 dars Tupe aliases
+
+type Id = string | number;
+
+let joha: Id;
+
+joha = 1;
+joha = "1";
+
+// obj
+type Person = {
+  firstName: string;
+  lasTName: string;
+  age: number;
+};
+
+const obj: Person = {
+    firstName: "John",
+    lasTName: "Rav",
+    age: 123
+}
+
+const obj1: Person = {
+    firstName: "John",
+    lasTName: "Rav",
+    age: 123
+}
+
+
+
+interface Person1 {
+  firstName: string;
+  lasTName: string;
+  age: number;
+}
