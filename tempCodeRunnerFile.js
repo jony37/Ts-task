@@ -1,14 +1,15 @@
 "use strict";
 var Status;
 (function (Status) {
-    Status[Status["SUCCESS"] = 0] = "SUCCESS";
-    Status[Status["ERROR"] = 1] = "ERROR";
+    Status[Status["information"] = 231] = "information";
+    Status[Status["success"] = 491] = "success";
+    Status[Status["redaction"] = 431] = "redaction";
+    Status[Status["clientEror"] = 499] = "clientEror";
+    Status[Status["serverError"] = 1015] = "serverError";
 })(Status || (Status = {}));
-function getStatus(status) {
-    if (status === Status.SUCCESS) {
-        return 'success';
+function getResponse(response) {
+    if (Status.success === response) {
+        console.log("Successful response");
     }
-    return 'error';
 }
-const statusMassage = getStatus(Status.SUCCESS);
-console.log(statusMassage);
+getResponse(200);

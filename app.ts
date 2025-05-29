@@ -245,3 +245,143 @@
 //     arr.splice(i, 1);
 //   }
 // }
+// enum Status {
+//     SUCCESS,
+//     ERROR
+// }
+
+// function getStatus(status: "success" | "error"): "success" | "error" {
+//     if (status === "success") {
+//         return 'success'
+//     }
+
+//     return 'error'
+// }
+
+// enum Status {
+//     information = 100 | 199,
+//     success = 200 | 299,
+//     redaction = 300 | 399,
+//     clientEror = 400 | 499,
+//     serverError = 500 | 599
+// }
+
+// // 1 chi masala
+// enum Status {
+//   informationS = 100,
+//   informationE = 199,
+//   successS = 200,
+//   successE = 299,
+//   clientErorS = 400,
+//   clientErorE = 499,
+//   serverErrorS = 500,
+//   serverErrorE = 599,
+// }
+
+// function getResponse(response: number) {
+//   if (response >= Status.informationS && response <= Status.informationE) {
+//     return `information response ${response}`;
+//   } else if (response >= Status.successS && response <= Status.successE) {
+//     return `success response ${response}`;
+//   } else if (response >= Status.clientErorS && response <= Status.clientErorE) {
+//     return `client Error response ${response}`;
+//   } else if (response >= Status.serverErrorS && response <= Status.serverErrorE) {
+//     return `server Error response ${response}`;
+//   }
+
+//   return `Error num`
+// }
+
+// if (response in statusMessages) {
+//     return {
+//       code: response as Status,
+//       message: statusMessages[response as Status]
+//     };
+//   } else {
+//     return {
+//       code: response,
+//       message: 'Unknown Status Code'
+//     };
+
+// const res = getResponse(507);
+// console.log(res);
+
+// 2chi masala
+
+type Status =
+  | 100
+  | 101
+  | 102
+  | 103
+  | 200
+  | 201
+  | 202
+  | 203
+  | 204
+  | 205
+  | 206
+  | 207
+  | 208
+  | 226
+  | 300
+  | 301
+  | 302
+  | 303
+  | 304
+  | 305
+  | 306
+  | 307
+  | 308
+  | 400
+  | 401
+  | 402
+  | 403
+  | 404
+  | 405
+  | 406
+  | 407
+  | 408
+  | 409
+  | 410
+  | 411
+  | 412
+  | 413
+  | 414
+  | 415
+  | 416
+  | 417
+  | 418
+  | 421
+  | 422
+  | 423
+  | 424
+  | 425
+  | 426
+  | 428
+  | 429
+  | 431
+  | 451
+  | 500
+  | 501
+  | 502
+  | 503
+  | 504
+  | 505
+  | 506
+  | 507
+  | 508
+  | 510
+  | 511;
+
+function getResponse(response: Status) {
+  if (response >= 100 && response <= 199) {
+    return `information response ${response}`;
+  } else if (response >= 200 && response <= 299) {
+    return `success response ${response}`;
+  } else if (response >= 300 && response <= 399) {
+    return `client Error response ${response}`;
+  } else if (response >= 400 && response <= 499) {
+    return `server Error response ${response}`;
+  }
+}
+const resss = getResponse(201);

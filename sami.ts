@@ -10,11 +10,6 @@
 
 // console.log(toUpper);
 
-// Union types
-
-// const mix: (number | string | boolean)[] = ["Jahon", 23, true];
-// console.log(mix);
-
 ///////////////// 6 dars Tupe ////////////////////
 // let joha: [number, string | number] = [1, 23];
 // console.log("1", joha);
@@ -107,9 +102,14 @@
 /////////////// 2 modul **********************************
 
 ////////////// 10 dars Union type//////////////////////////
-// let id: string | number;
-// id = "1234"
-// id = 1234;
+let id: string | number;
+id = "1234"
+id = 1234;
+
+// Union types
+
+// const mix: (number | string | boolean)[] = ["Jahon", 23, true];
+// console.log(mix);
 // console.log(id);
 
 // function printId (id: string | number) {
@@ -161,36 +161,76 @@
 
 // /////////// 12 dars Tupe aliases
 
-type Id = string | number;
+// type Id = string | number;
 
-let joha: Id;
+// let joha: Id;
 
-joha = 1;
-joha = "1";
+// joha = 1;
+// joha = "1";
 
-// obj
-type Person = {
-  firstName: string;
-  lasTName: string;
-  age: number;
-};
+// // obj
+// type Person = {
+//   firstName: string;
+//   lasTName: string;
+//   age: number;
+// };
 
-const obj: Person = {
-    firstName: "John",
-    lasTName: "Rav",
-    age: 123
-}
+// const obj: Person = {
+//     firstName: "John",
+//     lasTName: "Rav",
+//     age: 123
+// }
 
-const obj1: Person = {
-    firstName: "John",
-    lasTName: "Rav",
-    age: 123
-}
+// const obj1: Person = {
+//     firstName: "John",
+//     lasTName: "Rav",
+//     age: 123
+// }
 
 
-
+///////////////////////// 12 Dars Interface //////////////////
 interface Person1 {
   firstName: string;
   lasTName: string;
   age: number;
 }
+
+interface Student {
+  id: number;
+  name: string;
+  age?: number; // bo‘lishi shart emas bolgan malumot
+}
+
+interface Student {
+  readonly id: number;
+  name: string;
+}
+
+
+interface Logger {
+  log: (message: string) => void;
+}
+
+const logger: Logger = {
+  log: (msg) => console.log(msg)
+};
+
+interface Person {
+  name: string;
+}
+
+interface Student extends Person {
+  id: number;
+}
+
+const s: Student = {
+  name: "Laylo",
+  id: 2
+};
+
+interface StringArray {
+  [index: number]: string;
+}
+
+let arr: StringArray = ["a", "b", "c"];
+
