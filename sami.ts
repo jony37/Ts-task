@@ -417,36 +417,86 @@ id = 1234;
 // s.info(); // Layloning o‘rtacha bahosi: 90
 
 // ////////////// 23 dars overload method /////////////
-class Logger {
-  // overload imzolari (signature)
-  log(message: string): void;
-  log(message: number): void;
+// TypeScript’da method overloading bu — bir xil nomdagi metodni turli parametrlar bilan
+// ishlatish imkonini beruvchi imkoniyatdir. Bu C++ yoki Java’dagi overload bilan o‘xshash,
+//  lekin TypeScript’da kompilyatsiya vaqtida (compile-time) ishlaydi, runtime’da esa bitta metod ishlaydi.
+// class Logger {
+//   // overload imzolari (signature)
+//   log(message: string): void;
+//   log(message: number): void;
 
-  // haqiqiy implementatsiya (bitta metod!)
-  log(message: string | number): void {
-    console.log("Log:", message);
+//   // haqiqiy implementatsiya (bitta metod!)
+//   log(message: string | number): void {
+//     console.log("Log:", message);
+//   }
+// }
+
+// const logger = new Logger();
+// logger.log("Salom"); // Log: Salom
+// logger.log(42); // Log: 42
+
+// class Collection {
+//   items: (number | string)[] = [];
+
+//   add(item: string): void;
+//   add(item: number): void;
+//   add(item: string | number): void {
+//     this.items.push(item);
+//   }
+
+//   show() {
+//     console.log(this.items);
+//   }
+// }
+
+// const c = new Collection();
+// c.add(10);
+// c.add("hello");
+// c.show(); // [10, "hello"]
+
+// ///////////////24 chi dars getter setter
+class Person {
+  private _name: string;
+
+  constructor(name: string) {
+    this._name = name;
+  }
+
+  // getter
+  get name(): string {
+    return this._name;
+  }
+
+  // setter
+  set name(newName: string) {
+    if (newName.length < 2) {
+      throw new Error("Ism juda qisqa");
+    }
+    this._name = newName;
   }
 }
 
-const logger = new Logger();
-logger.log("Salom"); // Log: Salom
-logger.log(42); // Log: 42
+const person = new Person("Ali");
+console.log(person.name); // getter: "Ali"
 
-class Collection {
-  items: (number | string)[] = [];
+person.name = "Vali"; // setter ishladi
+console.log(person.name); // "Vali"
 
-  add(item: string): void;
-  add(item: number): void;
-  add(item: string | number): void {
-    this.items.push(item);
+class User {
+  private _firstName: string = "";
+  private _lastName: string = "";
+
+  set fullName(value: string) {
+    const parts = value.split(" ");
+    this._firstName = parts[0];
+    this._lastName = parts[1] || "";
   }
 
-  show() {
-    console.log(this.items);
+  get fullName(): string {
+    return `${this._firstName} ${this._lastName}`;
   }
 }
 
-const c = new Collection();
-c.add(10);
-c.add("hello");
-c.show(); // [10, "hello"]
+const user = new User();
+user.fullName = "Laylo Karimova";
+console.log(user.fullName); // Laylo Karimova
