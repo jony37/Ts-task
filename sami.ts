@@ -336,22 +336,85 @@ id = 1234;
 
 
 // //////////////// 21 dars constructor
-class Car {
-  name: string;
-  year: Date;
-  isCar: boolean;
+// class Car {
+//   name: string;
+//   year: Date;
+//   isCar: boolean;
 
-  constructor(name: string = "Unknown", year: Date  = new Date()) {
-    this.name = name;
-    this.year = year;
-    this.isCar = true; 
-  }
-}
+//   constructor(name: string = "Unknown", year: Date  = new Date()) {
+//     this.name = name;
+//     this.year = year;
+//     this.isCar = true; 
+//   }
+// }
 
-const bmw = new Car("Jahon", new Date("29.05.2025"));
-console.log(bmw);
-bmw.name = "Mers";
-console.log(bmw);
+// const bmw = new Car("Jahon", new Date("29.05.2025"));
+// console.log(bmw);
+// bmw.name = "Mers";
+// console.log(bmw);
 
-const chevrolet = new Car("Chevrolet", new Date("29.05.2025"))
-console.log(chevrolet);
+// const chevrolet = new Car("Chevrolet", new Date("29.05.2025"))
+// console.log(chevrolet);
+
+// class Car  {
+//     name: string
+//     year: Date
+
+//     constructor(name: string, year: Date)
+//     constructor (data: {name: string, year: Date})
+
+//     constructor (nameOrdata: string | {name: string,  year: Date}, year?: Date) {
+//         if (typeof nameOrdata === "string") {
+//         this.name = nameOrdata,
+//         this.year = year!
+//         } else if (typeof nameOrdata === 'object') {
+//             this.name = nameOrdata.name
+//             this.year = nameOrdata.year
+//         }
+ 
+//     }
+// }
+
+// const mers = new Car("Tayota", new Date())
+
+// /////////////////// 22 dars Methods //////////////////
+// class Person {
+//   name: string;
+
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+
+//   greet() {
+//     console.log(`Salom, mening ismim ${this.name}`);
+//   }
+// }
+
+// const person = new Person("Ali");
+// person.greet(); // Salom, mening ismim Ali
+
+
+// class Student {
+//   name: string;
+//   grades: number[];
+
+//   constructor(name: string, grades: number[]) {
+//     this.name = name;
+//     this.grades = grades;
+//   }
+
+//   getAverage(): number {
+//     let sum = 0;
+//     for (let i = 0; i < this.grades.length; i++) {
+//       sum += this.grades[i];
+//     }
+//     return sum / this.grades.length;
+//   }
+
+//   info() {
+//     console.log(`${this.name}ning o‘rtacha bahosi: ${this.getAverage()}`);
+//   }
+// }
+
+// const s = new Student("Laylo", [90, 85, 95]);
+// s.info(); // Layloning o‘rtacha bahosi: 90
