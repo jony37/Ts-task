@@ -246,35 +246,42 @@ id = 1234;
 // })
 
 // //////////////////// 15 dars Unknown ///////////////////
-function logger (text: unknown) {
-    // text.toUpperCase() xatolik yuzaga keladi lekin any da xatolik yuzaga kelmeydi
+// function logger (text: unknown) {
+//     // text.toUpperCase() xatolik yuzaga keladi lekin any da xatolik yuzaga kelmeydi
 
-    if (typeof text === "string") {
-        return text.toLowerCase()
-    } else if (typeof text === "number") {
-        return text.toFixed(2)
-    } else {
-        console.log("Unknown type");
-    }
+//     if (typeof text === "string") {
+//         return text.toLowerCase()
+//     } else if (typeof text === "number") {
+//         return text.toFixed(2)
+//     } else {
+//         console.log("Unknown type");
+//     }
+// }
+
+// console.log(logger(2.399439499));
+
+
+// let x: unknown = 123;
+// // console.log(x.toUpperCase());
+
+// if (typeof x === "number") {
+//     console.log(number);
+// }
+
+
+// let person: unknown = {
+//     name: "John",
+//     age: 30
+// }
+
+// if (typeof person === 'object') {
+//     const obj = person as {name: string, age: number}
+//     console.log(obj.name);
+// }
+
+// ///////////////// 16-dars Never //////////////////
+function throwError (message: string): never {
+    throw new Error(message)
 }
 
-console.log(logger(2.399439499));
-
-
-let x: unknown = 123;
-// console.log(x.toUpperCase());
-
-if (typeof x === "number") {
-    console.log(number);
-}
-
-
-let person: unknown = {
-    name: "John",
-    age: 30
-}
-
-if (typeof person === 'object') {
-    const obj = person as {name: string, age: number}
-    console.log(obj.name);
-}
+throwError("404 Not Found")
