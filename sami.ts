@@ -317,18 +317,41 @@ id = 1234;
 //     students: IUser[]
 // }
 
-// ////////////////// 20-dars Create Class /////////////
+// // ////////////////// 20-dars Create Class /////////////
+// class Car {
+//   name: string;
+//   year: Date;
+//   isCar: boolean;
+
+//   constructor(name: string, year: Date) {
+//     this.name = name;
+//     this.year = year;
+//     this.isCar = true; // defolt qiymat qilib berapmiz
+//   }
+// }
+
+// const bmw = new Car("Jahon", new Date("29.05.2025"));
+// console.log(bmw);
+
+
+
+// //////////////// 21 dars constructor
 class Car {
   name: string;
   year: Date;
   isCar: boolean;
 
-  constructor(name: string, year: Date) {
+  constructor(name: string = "Unknown", year: Date  = new Date()) {
     this.name = name;
     this.year = year;
-    this.isCar = true; // defolt qiymat qilib berapmiz
+    this.isCar = true; 
   }
 }
 
 const bmw = new Car("Jahon", new Date("29.05.2025"));
 console.log(bmw);
+bmw.name = "Mers";
+console.log(bmw);
+
+const chevrolet = new Car("Chevrolet", new Date("29.05.2025"))
+console.log(chevrolet);
