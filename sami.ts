@@ -188,49 +188,59 @@ id = 1234;
 // }
 
 
-///////////////////////// 12 Dars Interface //////////////////
-interface Person1 {
-  firstName: string;
-  lasTName: string;
-  age: number;
+///////////////////////// 13 Dars Interface //////////////////
+// interface Person1 {
+//   firstName: string;
+//   lasTName: string;
+//   age: number;
+// }
+
+// interface Student {
+//   id: number;
+//   name: string;
+//   age?: number; // bo‘lishi shart emas bolgan malumot
+// }
+
+// interface Student {
+//   readonly id: number;
+//   name: string;
+// }
+
+
+// interface Logger {
+//   log: (message: string) => void;
+// }
+
+// const logger: Logger = {
+//   log: (msg) => console.log(msg)
+// };
+
+// interface Person {
+//   name: string;
+// }
+
+// interface Student extends Person {
+//   id: number;
+// }
+
+// const s: Student = {
+//   name: "Laylo",
+//   id: 2
+// };
+
+// interface StringArray {
+//   [index: number]: string;
+// }
+
+// let arr: StringArray = ["a", "b", "c"];
+
+
+/////////////////////// 14 dars Void //////////////////////
+function logger (text: string, callback: (massage: string) => void) {
+    console.log(text);
+    callback("Logger" + text)
 }
 
-interface Student {
-  id: number;
-  name: string;
-  age?: number; // bo‘lishi shart emas bolgan malumot
-}
-
-interface Student {
-  readonly id: number;
-  name: string;
-}
-
-
-interface Logger {
-  log: (message: string) => void;
-}
-
-const logger: Logger = {
-  log: (msg) => console.log(msg)
-};
-
-interface Person {
-  name: string;
-}
-
-interface Student extends Person {
-  id: number;
-}
-
-const s: Student = {
-  name: "Laylo",
-  id: 2
-};
-
-interface StringArray {
-  [index: number]: string;
-}
-
-let arr: StringArray = ["a", "b", "c"];
-
+logger("Joha", massage => {
+    console.log(massage);
+})
