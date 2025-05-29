@@ -211,7 +211,18 @@ id = 1234;
 //     console.log(obj.name);
 // }
 // ///////////////// 16-dars Never //////////////////
-function throwError(message) {
-    throw new Error(message);
+// function throwError (message: string): never {
+//     throw new Error(message)
+// }
+// ///////////////// 17-dars Null /////////////
+let userName = null;
+let showUserName = userName !== null && userName !== void 0 ? userName : "Greet";
+console.log(showUserName);
+function greet(name) {
+    if (name === null) {
+        console.log("Ism yo‘q");
+    }
+    else {
+        console.log(`Salom, ${name}`);
+    }
 }
-throwError("404 Not Found");

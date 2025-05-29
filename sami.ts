@@ -103,7 +103,7 @@
 
 ////////////// 10 dars Union type//////////////////////////
 let id: string | number;
-id = "1234"
+id = "1234";
 id = 1234;
 
 // Union types
@@ -187,7 +187,6 @@ id = 1234;
 //     age: 123
 // }
 
-
 ///////////////////////// 13 Dars Interface //////////////////
 // interface Person1 {
 //   firstName: string;
@@ -205,7 +204,6 @@ id = 1234;
 //   readonly id: number;
 //   name: string;
 // }
-
 
 // interface Logger {
 //   log: (message: string) => void;
@@ -234,7 +232,6 @@ id = 1234;
 
 // let arr: StringArray = ["a", "b", "c"];
 
-
 /////////////////////// 14 dars Void //////////////////////
 // function logger (text: string, callback: (massage: string) => void) {
 //     console.log(text);
@@ -260,14 +257,12 @@ id = 1234;
 
 // console.log(logger(2.399439499));
 
-
 // let x: unknown = 123;
 // // console.log(x.toUpperCase());
 
 // if (typeof x === "number") {
 //     console.log(number);
 // }
-
 
 // let person: unknown = {
 //     name: "John",
@@ -280,8 +275,21 @@ id = 1234;
 // }
 
 // ///////////////// 16-dars Never //////////////////
-function throwError (message: string): never {
-    throw new Error(message)
-}
+// function throwError (message: string): never {
+//     throw new Error(message)
+// }
 
-throwError("404 Not Found")
+
+
+// ///////////////// 17-dars Null /////////////
+let userName: string | null = null;
+let showUserName = userName ?? "Greet";
+console.log(showUserName);
+
+function greet(name: string | null) {
+  if (name === null) {
+    console.log("Ism yo‘q");
+  } else {
+    console.log(`Salom, ${name}`);
+  }
+}
