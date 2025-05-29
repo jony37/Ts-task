@@ -279,17 +279,56 @@ id = 1234;
 //     throw new Error(message)
 // }
 
-
+// throwError("404 Not Found")
+// function infinityLoop () {
+//     while (true) {
+//         console.log("Loop");
+//     }
+// }
 
 // ///////////////// 17-dars Null /////////////
-let userName: string | null = null;
-let showUserName = userName ?? "Greet";
-console.log(showUserName);
+// let userName: string | null = null;
+// let showUserName = userName ?? "Greet";
+// console.log(showUserName);
 
-function greet(name: string | null) {
-  if (name === null) {
-    console.log("Ism yo‘q");
-  } else {
-    console.log(`Salom, ${name}`);
+// function greet(name: string | null) {
+//   if (name === null) {
+//     console.log("Ism yo‘q");
+//   } else {
+//     console.log(`Salom, ${name}`);
+//   }
+// }
+
+// /////////// 19 dars Amaliyot //////////////
+// enum Role {
+//     ADMIN,
+//     STUDENT
+// }
+// interface IUser {
+//     id : number
+//     name : string
+//     role: Role
+// }
+
+// interface ICourse {
+//     id : number
+//     title : string
+//     description: string
+//     students: IUser[]
+// }
+
+// ////////////////// 20-dars Create Class /////////////
+class Car {
+  name: string;
+  year: Date;
+  isCar: boolean;
+
+  constructor(name: string, year: Date) {
+    this.name = name;
+    this.year = year;
+    this.isCar = true; // defolt qiymat qilib berapmiz
   }
 }
+
+const bmw = new Car("Jahon", new Date("29.05.2025"));
+console.log(bmw);

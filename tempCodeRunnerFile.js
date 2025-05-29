@@ -1,4 +1,9 @@
 "use strict";
-let userName = null;
-let showUserName = userName !== null && userName !== void 0 ? userName : "Greet";
-console.log(showUserName);
+class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+}
+const bmw = new Car("Jahon", new Date("29.05.2025 14:13"));
+console.log(bmw);
