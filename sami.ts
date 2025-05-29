@@ -236,11 +236,45 @@ id = 1234;
 
 
 /////////////////////// 14 dars Void //////////////////////
-function logger (text: string, callback: (massage: string) => void) {
-    console.log(text);
-    callback("Logger" + text)
+// function logger (text: string, callback: (massage: string) => void) {
+//     console.log(text);
+//     callback("Logger" + text)
+// }
+
+// logger("Joha", massage => {
+//     console.log(massage);
+// })
+
+// //////////////////// 15 dars Unknown ///////////////////
+function logger (text: unknown) {
+    // text.toUpperCase() xatolik yuzaga keladi lekin any da xatolik yuzaga kelmeydi
+
+    if (typeof text === "string") {
+        return text.toLowerCase()
+    } else if (typeof text === "number") {
+        return text.toFixed(2)
+    } else {
+        console.log("Unknown type");
+    }
 }
 
-logger("Joha", massage => {
-    console.log(massage);
-})
+console.log(logger(2.399439499));
+
+
+let x: unknown = 123;
+// console.log(x.toUpperCase());
+
+if (typeof x === "number") {
+    console.log(number);
+}
+
+
+let person: unknown = {
+    name: "John",
+    age: 30
+}
+
+if (typeof person === 'object') {
+    const obj = person as {name: string, age: number}
+    console.log(obj.name);
+}
