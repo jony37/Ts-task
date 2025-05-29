@@ -333,8 +333,6 @@ id = 1234;
 // const bmw = new Car("Jahon", new Date("29.05.2025"));
 // console.log(bmw);
 
-
-
 // //////////////// 21 dars constructor
 // class Car {
 //   name: string;
@@ -344,7 +342,7 @@ id = 1234;
 //   constructor(name: string = "Unknown", year: Date  = new Date()) {
 //     this.name = name;
 //     this.year = year;
-//     this.isCar = true; 
+//     this.isCar = true;
 //   }
 // }
 
@@ -371,7 +369,7 @@ id = 1234;
 //             this.name = nameOrdata.name
 //             this.year = nameOrdata.year
 //         }
- 
+
 //     }
 // }
 
@@ -392,7 +390,6 @@ id = 1234;
 
 // const person = new Person("Ali");
 // person.greet(); // Salom, mening ismim Ali
-
 
 // class Student {
 //   name: string;
@@ -418,3 +415,38 @@ id = 1234;
 
 // const s = new Student("Laylo", [90, 85, 95]);
 // s.info(); // Layloning o‘rtacha bahosi: 90
+
+// ////////////// 23 dars overload method /////////////
+class Logger {
+  // overload imzolari (signature)
+  log(message: string): void;
+  log(message: number): void;
+
+  // haqiqiy implementatsiya (bitta metod!)
+  log(message: string | number): void {
+    console.log("Log:", message);
+  }
+}
+
+const logger = new Logger();
+logger.log("Salom"); // Log: Salom
+logger.log(42); // Log: 42
+
+class Collection {
+  items: (number | string)[] = [];
+
+  add(item: string): void;
+  add(item: number): void;
+  add(item: string | number): void {
+    this.items.push(item);
+  }
+
+  show() {
+    console.log(this.items);
+  }
+}
+
+const c = new Collection();
+c.add(10);
+c.add("hello");
+c.show(); // [10, "hello"]

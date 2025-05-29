@@ -268,7 +268,7 @@ id = 1234;
 //   constructor(name: string = "Unknown", year: Date  = new Date()) {
 //     this.name = name;
 //     this.year = year;
-//     this.isCar = true; 
+//     this.isCar = true;
 //   }
 // }
 // const bmw = new Car("Jahon", new Date("29.05.2025"));
@@ -325,3 +325,28 @@ id = 1234;
 // }
 // const s = new Student("Laylo", [90, 85, 95]);
 // s.info(); // Layloning o‘rtacha bahosi: 90
+// ////////////// 23 dars overload method /////////////
+class Logger {
+    // haqiqiy implementatsiya (bitta metod!)
+    log(message) {
+        console.log("Log:", message);
+    }
+}
+const logger = new Logger();
+logger.log("Salom"); // Log: Salom
+logger.log(42); // Log: 42
+class Collection {
+    constructor() {
+        this.items = [];
+    }
+    add(item) {
+        this.items.push(item);
+    }
+    show() {
+        console.log(this.items);
+    }
+}
+const c = new Collection();
+c.add(10);
+c.add("hello");
+c.show(); // [10, "hello"]
