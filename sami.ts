@@ -455,48 +455,84 @@ id = 1234;
 // c.show(); // [10, "hello"]
 
 // ///////////////24 chi dars getter setter
-class Person {
-  private _name: string;
+// class Person {
+//   private _name: string;
 
-  constructor(name: string) {
-    this._name = name;
-  }
+//   constructor(name: string) {
+//     this._name = name;
+//   }
 
-  // getter
-  get name(): string {
-    return this._name;
-  }
+//   // getter
+//   get name(): string {
+//     return this._name;
+//   }
 
-  // setter
-  set name(newName: string) {
-    if (newName.length < 2) {
-      throw new Error("Ism juda qisqa");
+//   // setter
+//   set name(newName: string) {
+//     if (newName.length < 2) {
+//       throw new Error("Ism juda qisqa");
+//     }
+//     this._name = newName;
+//   }
+// }
+
+// const person = new Person("Ali");
+// console.log(person.name); // getter: "Ali"
+
+// person.name = "Vali"; // setter ishladi
+// console.log(person.name); // "Vali"
+
+// class User {
+//   private _firstName: string = "";
+//   private _lastName: string = "";
+
+//   set fullName(value: string) {
+//     const parts = value.split(" ");
+//     this._firstName = parts[0];
+//     this._lastName = parts[1] || "";
+//   }
+
+//   get fullName(): string {
+//     return `${this._firstName} ${this._lastName}`;
+//   }
+// }
+
+// const user = new User();
+// user.fullName = "Laylo Karimova";
+// console.log(user.fullName); // Laylo Karimova
+
+// ////////// 25 dars Inplements ////////////////
+interface Drivable {
+  startEngine(): void;
+  drive(speed: number): void;
+}
+
+interface IFly {
+    fly(speed: number): void;
+}
+
+class Car implements Drivable, IFly{
+    model: string;
+
+    constructor(model: string) {
+        this.model = model
     }
-    this._name = newName;
-  }
+
+    startEngine ():void {
+        console.log("Engine started.");
+    }
+
+    drive(speed :number):void {
+        console.log(`${this.model}: driveng at ${speed} at km/h`);
+    } 
+
+    fly(speed: number): void {
+        console.log(`Fle ${speed}`);
+        
+    }
 }
 
-const person = new Person("Ali");
-console.log(person.name); // getter: "Ali"
-
-person.name = "Vali"; // setter ishladi
-console.log(person.name); // "Vali"
-
-class User {
-  private _firstName: string = "";
-  private _lastName: string = "";
-
-  set fullName(value: string) {
-    const parts = value.split(" ");
-    this._firstName = parts[0];
-    this._lastName = parts[1] || "";
-  }
-
-  get fullName(): string {
-    return `${this._firstName} ${this._lastName}`;
-  }
-}
-
-const user = new User();
-user.fullName = "Laylo Karimova";
-console.log(user.fullName); // Laylo Karimova
+const porshe = new Car("Porshe");
+porshe.startEngine()
+porshe.drive(100)
+porshe.fly(200)
