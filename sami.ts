@@ -637,14 +637,72 @@ id = 1234;
 // const employee = new Employee("John", 1000, 30)
 
 // 28 dars static
-class Hisob {
-  static PI = 3.14;
+// class Hisob {
+//   static PI = 3.14;
 
-  static kvadrat(n: number): number {
-    return n * n;
+//   static kvadrat(n: number): number {
+//     return n * n;
+//   }
+// }
+
+// // Obyekt yaratmasdan ishlatyapmiz
+// console.log(Hisob.PI);
+// console.log(Hisob.kvadrat(5));
+
+// class Counter {
+//     static count: number = 0
+//     private static secretKey: string = '122312'
+//     title: string
+
+//     constructor(title: string) {
+//         this.title = title
+//     }
+
+//     static increment() {
+//         Counter.count++
+//     }
+
+//     static add(a: number, b: number) {
+//         this.increment()
+//         return a+b
+//     }
+
+//     static getSecretKey() {
+//         return this.secretKey
+//     }
+
+//     getTitle() {
+//         return this.title
+//     }
+// }
+
+// const c = new Counter('c1')
+// console.log(c.title);
+
+// console.log(Counter.count);
+// Counter.increment()
+// console.log(Counter.count);
+
+// console.log(Counter.add(10, 100));
+// console.log(Counter.count);
+
+// const MathHelper = {
+//     add: (a: number, b: number) => a + b,
+// }
+
+// console.log(MathHelper.add(2, 5));
+
+// 29 abstract  class
+
+abstract class Animal {
+  abstract makeSound(): void;
+}
+
+class Cat extends Animal {
+  makeSound(): void {
+    console.log("Meow!");
   }
 }
 
-// Obyekt yaratmasdan ishlatyapmiz
-console.log(Hisob.PI);
-console.log(Hisob.kvadrat(5));
+const cat = new Cat();
+cat.makeSound();
