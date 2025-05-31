@@ -524,11 +524,11 @@ id = 1234;
 
 //     drive(speed :number):void {
 //         console.log(`${this.model}: driveng at ${speed} at km/h`);
-//     } 
+//     }
 
 //     fly(speed: number): void {
 //         console.log(`Fle ${speed}`);
-        
+
 //     }
 // }
 
@@ -538,35 +538,100 @@ id = 1234;
 // porshe.fly(200)
 
 // ////////// 26 dars Extends super ////////////////
-class Animals {
-    id: number;
-    name: string;
+// class Animals {
+//     id: number;
+//     name: string;
 
-    constructor (name: string, id: number) {
-        this.name = name;
-        this.id = id
-    }
+//     constructor (name: string, id: number) {
+//         this.name = name;
+//         this.id = id
+//     }
 
-    speak () {
-        console.log(`${this.name} make  a sound`);
-    } 
+//     speak () {
+//         console.log(`${this.name} make  a sound`);
+//     }
 
-    shoInfo () {
-        console.log(`${this.name} ${this.id}`);
-    }
+//     shoInfo () {
+//         console.log(`${this.name} ${this.id}`);
+//     }
+// }
+
+// class Cat extends Animals {
+//     constructor (name:string) {
+//         const id = Math.random() * 100;
+//         super(name, id)
+//     }
+
+//     override speak(): void {
+//         super.speak()
+//         console.log(`${this.name} meovs`);
+//     }
+// }
+
+// const cat = new Cat("Kitty")
+// cat.shoInfo()
+
+// ////////// 27 dars Compasition super ////////////////
+class User {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  sayHello(): void {
+    console.log("Heloom", this.name);
+  }
 }
 
-class Cat extends Animals {
-    constructor (name:string) {
-        const id = Math.random() * 100;
-        super(name, id)
-    }
+class Payment {
+  amount: number;
 
-    override speak(): void {
-        super.speak()
-        console.log(`${this.name} meovs`);
-    }
+  constructor(amount: number) {
+    this.amount = amount;
+  }
+
+  pay() {
+    console.log(`You paid  ${this.amount}`);
+  }
 }
 
-const cat = new Cat("Kitty")
-cat.shoInfo()
+class UserWithPayment {
+  user: User;
+  payment: Payment;
+
+  constructor(user: User, payment: Payment) {
+    this.user = user;
+    this.payment = payment;
+  }
+
+  showInfo() {
+    this.user.sayHello();
+    this.payment.pay();
+  }
+}
+
+const user = new User("John");
+const payment = new Payment(100);
+const userWithPayment = new UserWithPayment(user, payment);
+
+class Person {
+  protected age: number;
+
+  constructor(age: number) {
+    this.age = age;
+  }
+}
+
+class Employee extends Person {
+  public name: string;
+  private salary: number;
+
+  constructor (name: string, salary: number, age: number) {
+    super(age)
+    this.name = name;
+    this.salary = salary;
+  }
+}
+
+const employee = new Employee("John", 1000, 30)
