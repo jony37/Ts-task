@@ -709,25 +709,46 @@ id = 1234;
 
 // 30 dars This
 
-class Counter {
-    count: number = 0
+// class Counter {
+//     count: number = 0
 
-    increment = () => {
-        console.log(this);
-    }
-}
+//     increment = () => {
+//         console.log(this);
+//     }
+// }
 
-const c = new Counter()
+// const c = new Counter()
 
-const incrementFn = c.increment
-incrementFn()
-incrementFn()
-incrementFn()
+// const incrementFn = c.increment
+// incrementFn()
+// incrementFn()
+// incrementFn()
 
-class User {
-    name: string = 'John'
+// class User {
+//     name: string = 'John'
 
-    log(this: User) {
-        console.log(this.name);
-    }
-}
+//     log(this: User) {
+//         console.log(this.name);
+//     }
+// }
+
+//  31 dars Amaliyott
+// export enum Role {
+//   ADMIN = "ADMIN",
+//   STUDENT = "STUDENT",
+// }
+// //  User  class
+// class User {
+//   id: number;
+//   name: string;
+//   role: Role;
+// }
+
+
+// class Course {
+//     private students: User[] = []
+
+//     id: number;
+//     name: string;
+//     role: string;
+// }
