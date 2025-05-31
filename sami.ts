@@ -572,66 +572,79 @@ id = 1234;
 // cat.shoInfo()
 
 // ////////// 27 dars Compasition super ////////////////
-class User {
-  name: string;
+// class User {
+//   name: string;
 
-  constructor(name: string) {
-    this.name = name;
-  }
+//   constructor(name: string) {
+//     this.name = name;
+//   }
 
-  sayHello(): void {
-    console.log("Heloom", this.name);
+//   sayHello(): void {
+//     console.log("Heloom", this.name);
+//   }
+// }
+
+// class Payment {
+//   amount: number;
+
+//   constructor(amount: number) {
+//     this.amount = amount;
+//   }
+
+//   pay() {
+//     console.log(`You paid  ${this.amount}`);
+//   }
+// }
+
+// class UserWithPayment {
+//   user: User;
+//   payment: Payment;
+
+//   constructor(user: User, payment: Payment) {
+//     this.user = user;
+//     this.payment = payment;
+//   }
+
+//   showInfo() {
+//     this.user.sayHello();
+//     this.payment.pay();
+//   }
+// }
+
+// const user = new User("John");
+// const payment = new Payment(100);
+// const userWithPayment = new UserWithPayment(user, payment);
+
+// class Person {
+//   protected age: number;
+
+//   constructor(age: number) {
+//     this.age = age;
+//   }
+// }
+
+// class Employee extends Person {
+//   public name: string;
+//   private salary: number;
+
+//   constructor (name: string, salary: number, age: number) {
+//     super(age)
+//     this.name = name;
+//     this.salary = salary;
+//   }
+// }
+
+// const employee = new Employee("John", 1000, 30)
+
+// 28 dars static
+class Hisob {
+  static PI = 3.14;
+
+  static kvadrat(n: number): number {
+    return n * n;
   }
 }
 
-class Payment {
-  amount: number;
-
-  constructor(amount: number) {
-    this.amount = amount;
-  }
-
-  pay() {
-    console.log(`You paid  ${this.amount}`);
-  }
-}
-
-class UserWithPayment {
-  user: User;
-  payment: Payment;
-
-  constructor(user: User, payment: Payment) {
-    this.user = user;
-    this.payment = payment;
-  }
-
-  showInfo() {
-    this.user.sayHello();
-    this.payment.pay();
-  }
-}
-
-const user = new User("John");
-const payment = new Payment(100);
-const userWithPayment = new UserWithPayment(user, payment);
-
-class Person {
-  protected age: number;
-
-  constructor(age: number) {
-    this.age = age;
-  }
-}
-
-class Employee extends Person {
-  public name: string;
-  private salary: number;
-
-  constructor (name: string, salary: number, age: number) {
-    super(age)
-    this.name = name;
-    this.salary = salary;
-  }
-}
-
-const employee = new Employee("John", 1000, 30)
+// Obyekt yaratmasdan ishlatyapmiz
+console.log(Hisob.PI);
+console.log(Hisob.kvadrat(5));
