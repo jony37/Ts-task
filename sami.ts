@@ -502,37 +502,71 @@ id = 1234;
 // console.log(user.fullName); // Laylo Karimova
 
 // ////////// 25 dars Inplements ////////////////
-interface Drivable {
-  startEngine(): void;
-  drive(speed: number): void;
-}
+// interface Drivable {
+//   startEngine(): void;
+//   drive(speed: number): void;
+// }
 
-interface IFly {
-    fly(speed: number): void;
-}
+// interface IFly {
+//     fly(speed: number): void;
+// }
 
-class Car implements Drivable, IFly{
-    model: string;
+// class Car implements Drivable, IFly{
+//     model: string;
 
-    constructor(model: string) {
-        this.model = model
+//     constructor(model: string) {
+//         this.model = model
+//     }
+
+//     startEngine ():void {
+//         console.log("Engine started.");
+//     }
+
+//     drive(speed :number):void {
+//         console.log(`${this.model}: driveng at ${speed} at km/h`);
+//     } 
+
+//     fly(speed: number): void {
+//         console.log(`Fle ${speed}`);
+        
+//     }
+// }
+
+// const porshe = new Car("Porshe");
+// porshe.startEngine()
+// porshe.drive(100)
+// porshe.fly(200)
+
+// ////////// 26 dars Extends super ////////////////
+class Animals {
+    id: number;
+    name: string;
+
+    constructor (name: string, id: number) {
+        this.name = name;
+        this.id = id
     }
 
-    startEngine ():void {
-        console.log("Engine started.");
-    }
-
-    drive(speed :number):void {
-        console.log(`${this.model}: driveng at ${speed} at km/h`);
+    speak () {
+        console.log(`${this.name} make  a sound`);
     } 
 
-    fly(speed: number): void {
-        console.log(`Fle ${speed}`);
-        
+    shoInfo () {
+        console.log(`${this.name} ${this.id}`);
     }
 }
 
-const porshe = new Car("Porshe");
-porshe.startEngine()
-porshe.drive(100)
-porshe.fly(200)
+class Cat extends Animals {
+    constructor (name:string) {
+        const id = Math.random() * 100;
+        super(name, id)
+    }
+
+    override speak(): void {
+        super.speak()
+        console.log(`${this.name} meovs`);
+    }
+}
+
+const cat = new Cat("Kitty")
+cat.shoInfo()
