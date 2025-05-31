@@ -694,15 +694,40 @@ id = 1234;
 
 // 29 abstract  class
 
-abstract class Animal {
-  abstract makeSound(): void;
+// abstract class Animal {
+//   abstract makeSound(): void;
+// }
+
+// class Cat extends Animal {
+//   makeSound(): void {
+//     console.log("Meow!");
+//   }
+// }
+
+// const cat = new Cat();
+// cat.makeSound();
+
+// 30 dars This
+
+class Counter {
+    count: number = 0
+
+    increment = () => {
+        console.log(this);
+    }
 }
 
-class Cat extends Animal {
-  makeSound(): void {
-    console.log("Meow!");
-  }
-}
+const c = new Counter()
 
-const cat = new Cat();
-cat.makeSound();
+const incrementFn = c.increment
+incrementFn()
+incrementFn()
+incrementFn()
+
+class User {
+    name: string = 'John'
+
+    log(this: User) {
+        console.log(this.name);
+    }
+}
