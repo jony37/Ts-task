@@ -752,3 +752,36 @@ id = 1234;
 //     name: string;
 //     role: string;
 // }
+
+// 33 dars Generic nima
+
+// const arr: Array<number> = [1,2,3,4,5]
+
+function indentity<T> (arg: T): T {
+    return arg
+}
+
+indentity<number>(5)
+indentity<string>("jony")
+
+const number: Array<number> = [1,2,3,4,5]
+
+interface IUSer {
+    name: string,
+    age: number
+}
+
+const arr: Array<IUSer> = [{name: "Jony", age: 18}];
+
+
+enum Roles {
+    ADMIN,
+    USER
+}
+type UserRoles = Record<string, number>
+
+const reles: UserRoles = {
+    name: Roles.ADMIN,
+    john: Roles.USER
+
+}

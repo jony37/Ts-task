@@ -448,45 +448,158 @@ id = 1234;
 // const cat = new Cat("Kitty")
 // cat.shoInfo()
 // ////////// 27 dars Compasition super ////////////////
-class User {
-    constructor(name) {
-        this.name = name;
-    }
-    sayHello() {
-        console.log("Heloom", this.name);
-    }
+// class User {
+//   name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+//   sayHello(): void {
+//     console.log("Heloom", this.name);
+//   }
+// }
+// class Payment {
+//   amount: number;
+//   constructor(amount: number) {
+//     this.amount = amount;
+//   }
+//   pay() {
+//     console.log(`You paid  ${this.amount}`);
+//   }
+// }
+// class UserWithPayment {
+//   user: User;
+//   payment: Payment;
+//   constructor(user: User, payment: Payment) {
+//     this.user = user;
+//     this.payment = payment;
+//   }
+//   showInfo() {
+//     this.user.sayHello();
+//     this.payment.pay();
+//   }
+// }
+// const user = new User("John");
+// const payment = new Payment(100);
+// const userWithPayment = new UserWithPayment(user, payment);
+// class Person {
+//   protected age: number;
+//   constructor(age: number) {
+//     this.age = age;
+//   }
+// }
+// class Employee extends Person {
+//   public name: string;
+//   private salary: number;
+//   constructor (name: string, salary: number, age: number) {
+//     super(age)
+//     this.name = name;
+//     this.salary = salary;
+//   }
+// }
+// const employee = new Employee("John", 1000, 30)
+// 28 dars static
+// class Hisob {
+//   static PI = 3.14;
+//   static kvadrat(n: number): number {
+//     return n * n;
+//   }
+// }
+// // Obyekt yaratmasdan ishlatyapmiz
+// console.log(Hisob.PI);
+// console.log(Hisob.kvadrat(5));
+// class Counter {
+//     static count: number = 0
+//     private static secretKey: string = '122312'
+//     title: string
+//     constructor(title: string) {
+//         this.title = title
+//     }
+//     static increment() {
+//         Counter.count++
+//     }
+//     static add(a: number, b: number) {
+//         this.increment()
+//         return a+b
+//     }
+//     static getSecretKey() {
+//         return this.secretKey
+//     }
+//     getTitle() {
+//         return this.title
+//     }
+// }
+// const c = new Counter('c1')
+// console.log(c.title);
+// console.log(Counter.count);
+// Counter.increment()
+// console.log(Counter.count);
+// console.log(Counter.add(10, 100));
+// console.log(Counter.count);
+// const MathHelper = {
+//     add: (a: number, b: number) => a + b,
+// }
+// console.log(MathHelper.add(2, 5));
+// 29 abstract  class
+// abstract class Animal {
+//   abstract makeSound(): void;
+// }
+// class Cat extends Animal {
+//   makeSound(): void {
+//     console.log("Meow!");
+//   }
+// }
+// const cat = new Cat();
+// cat.makeSound();
+// 30 dars This
+// class Counter {
+//     count: number = 0
+//     increment = () => {
+//         console.log(this);
+//     }
+// }
+// const c = new Counter()
+// const incrementFn = c.increment
+// incrementFn()
+// incrementFn()
+// incrementFn()
+// class User {
+//     name: string = 'John'
+//     log(this: User) {
+//         console.log(this.name);
+//     }
+// }
+//  31 dars Amaliyott
+// export enum Role {
+//   ADMIN = "ADMIN",
+//   STUDENT = "STUDENT",
+// }
+// //  User  class
+// class User {
+//   id: number;
+//   name: string;
+//   role: Role;
+// }
+// class Course {
+//     private students: User[] = []
+//     id: number;
+//     name: string;
+//     role: string;
+// }
+// 33 dars Generic nima
+// const arr: Array<number> = [1,2,3,4,5]
+function indentity(arg) {
+    return arg;
 }
-class Payment {
-    constructor(amount) {
-        this.amount = amount;
-    }
-    pay() {
-        console.log(`You paid  ${this.amount}`);
-    }
-}
-class UserWithPayment {
-    constructor(user, payment) {
-        this.user = user;
-        this.payment = payment;
-    }
-    showInfo() {
-        this.user.sayHello();
-        this.payment.pay();
-    }
-}
-const user = new User("John");
-const payment = new Payment(100);
-const userWithPayment = new UserWithPayment(user, payment);
-class Person {
-    constructor(age) {
-        this.age = age;
-    }
-}
-class Employee extends Person {
-    constructor(name, salary, age) {
-        super
-            .
-                this.name = name;
-        this.salary = salary;
-    }
-}
+indentity(5);
+indentity("jony");
+const number = [1, 2, 3, 4, 5];
+const arr = [{ name: "Jony", age: 18 }];
+var Roles;
+(function (Roles) {
+    Roles[Roles["ADMIN"] = 0] = "ADMIN";
+    Roles[Roles["USER"] = 1] = "USER";
+})(Roles || (Roles = {}));
+const reles = {
+    name: Roles.ADMIN,
+    john: Roles.USER
+};
